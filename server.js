@@ -21,7 +21,6 @@ if (err) {
     console.error(err);
     return;
   } 
-  page = data;
 });
 
 // Define a const `server` as an arrow function using http.createServer. 
@@ -33,7 +32,7 @@ if (err) {
 const server = http.createServer((req, res) => {
     res.statusCode = 200
     res.setHeader('Content-Type', 'text/html')
-    res.end(page)
+    res.send('./public/index.html')
   })
 // Start the `server` const listening on the port defined by argument in your `port` const. 
 // Put the exact message `Server listening on port ${port}` on the console log. 
